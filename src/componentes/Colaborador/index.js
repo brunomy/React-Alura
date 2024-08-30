@@ -1,17 +1,19 @@
-import './Colaborador.scss'
-// https://github.com/brunomy.png
-const Colaborador = ({nome, imagem, cargo, cor}) => {
+import { IoMdCloseCircle } from "react-icons/io";
+import './colaborador.css'
+
+const Colaborador = ({ colaborador, corDeFundo, aoDeletar }) => {
     return (
-        <div className='colaborador'>
-            <div className='cabecalho' style={{background: cor}}>
-                <img src={imagem} alt={nome} />
+        <div className="colaborador">
+            <IoMdCloseCircle size={25} className="deletar" onClick={aoDeletar} />
+            <div className="cabecalho" style={{ backgroundColor: corDeFundo }}>
+                <img src={colaborador.imagem} alt={colaborador.nome} />
             </div>
-            <div className='rodape'>
-                <h4>{nome}</h4>
-                <h5>{cargo}</h5>
+            <div className="rodape">
+                <h4>{colaborador.nome}</h4>
+                <h5>{colaborador.cargo}</h5>
             </div>
         </div>
     )
 }
 
-export default Colaborador;
+export default Colaborador
